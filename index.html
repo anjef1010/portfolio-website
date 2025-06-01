@@ -6,6 +6,7 @@
     <title>Anjef Dangol</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -21,6 +22,7 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#resume">Resume</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
     
@@ -31,26 +33,21 @@
         </div>
     </header>
     
-    
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
             <h1>Hey, I'm <span id="typewriter-text" class="typewriter"> Anjef Dangol</span></h1>
             <p>A Developer, Photographer, and Videographer passionate about creating engaging digital experiences.</p>
-
-                <a href="#contact" class="btn">Get In Touch</a>
-                
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/_anjef?igsh=MXNxaXl4M285M2g1eg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/anjef-dangol-357b34255/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/anjef1010/anjef1010"target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.facebook.com/anjef.dangol.1010?mibextid=wwXIfr&rdid=oSihesco9RmWmly5&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EqocUtLC3%2F%3Fmibextid%3DwwXIfr#" target="_blank"><i class="fab fa-facebook"></i></a>
-                </div>
+            <a href="#contact" class="btn">Get In Touch</a>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/_anjef?igsh=MXNxaXl4M285M2g1eg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/anjef-dangol-357b34255/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/anjef1010/anjef1010" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/anjef.dangol.1010?mibextid=wwXIfr&rdid=oSihesco9RmWmly5&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EqocUtLC3%2F%3Fmibextid%3DwwXIfr#" target="_blank"><i class="fab fa-facebook"></i></a>
             </div>
-            
-            <div class="hero-img">
-                <img src="assets/pic4.jpg" alt="Anjef Dangol">
-            </div>
+        </div>
+        <div class="hero-img">
+            <img src="assets/pic4.jpg" alt="Anjef Dangol">
         </div>
     </section>
     
@@ -68,13 +65,13 @@
                 
                 <div class="about-text">
                     <h3>Let me introduce myself</h3>
-                    <p>Hey, you found me. Welcome!! I am Anjef Dangol, an enthusiastic person who loves coding, photography, videography, traveling, and sports. I love to learn new things and am constantly exploring different creative avenues.</p>
-                    <p>As a  developer, I focus on creating user-friendly and visually appealing websites. My passion for photography and videography allows me to bring a unique visual perspective to my development work.</p>
+                    <p>Hey, there I'm Anjef Dangol, a passionate Web developer for creating engaging and dynamic web applications. If you have something for web applications, let me know if you want to collaborate, feel free to reach out, or just want to say hi ✋. Let's develop something amazing together!</p>
                     <h3>My Skills</h3>
                     <div class="skills">
                         <div class="skill-item">Frontend Development</div>
                         <div class="skill-item">HTML/CSS</div>
                         <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">PHP</div>
                         <div class="skill-item">React</div>
                         <div class="skill-item">Photography</div>
                         <div class="skill-item">Videography</div>
@@ -96,11 +93,12 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="assets/por.png" alt="Futsal Booking System">
+                        <img src="assets/futsal_booking_system.png" alt="Futsal Booking System">
                     </div>
                     <div class="project-content">
                         <h3>Futsal Booking System</h3>
                         <p>A web application that allows users to book futsal courts online, manage their bookings, and check availability in real-time.</p>
+                        <p><strong>Technologies Used:</strong> PHP, HTML, XAMPP</p>
                         <div class="project-links">
                             <a href="#"><i class="fas fa-link"></i> Live Demo</a>
                             <a href="#"><i class="fab fa-github"></i> GitHub</a>
@@ -110,11 +108,12 @@
                 
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="/api/placeholder/400/300" alt="Image Gallery System">
+                        <img src="assets/todo_list.png" alt="To-Do List">
                     </div>
                     <div class="project-content">
-                        <h3>Image Gallery System</h3>
-                        <p>An interactive image gallery that showcases photography work with filtering options, lightbox viewing, and responsive design.</p>
+                        <h3>To-Do List</h3>
+                        <p>A simple and interactive to-do list application that allows users to add, edit, and delete tasks.</p>
+                        <p><strong>Technologies Used:</strong> React</p>
                         <div class="project-links">
                             <a href="#"><i class="fas fa-link"></i> Live Demo</a>
                             <a href="#"><i class="fab fa-github"></i> GitHub</a>
@@ -124,33 +123,48 @@
                 
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="/api/placeholder/400/300" alt="Photography Portfolio">
+                        <img src="assets/tic_tac_toe.png" alt="Tic Tac Toe">
                     </div>
                     <div class="project-content">
-                        <h3>Photography Portfolio</h3>
-                        <p>A curated collection of my best photography work, organized by category with details about equipment and techniques used.</p>
+                        <h3>Tic Tac Toe</h3>
+                        <p>A classic tic-tac-toe game implemented in a web application format, allowing users to play against each other.</p>
+                        <p><strong>Technologies Used:</strong> React</p>
                         <div class="project-links">
-                            <a href="#"><i class="fas fa-link"></i> View Project</a>
+                            <a href="#"><i class="fas fa-link"></i> Live Demo</a>
+                            <a href="#"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="/api/placeholder/400/300" alt="Video Showcase">
+                        <img src="assets/digital_clock.png" alt="Digital Clock">
                     </div>
                     <div class="project-content">
-                        <h3>Video Showcase</h3>
-                        <p>A compilation of my videography projects, including short films, event coverage, and promotional videos.</p>
+                        <h3>Digital Clock</h3>
+                        <p>A real-time digital clock that displays the current time and updates every second.</p>
+                        <p><strong>Technologies Used:</strong> React</p>
                         <div class="project-links">
-                            <a href="#"><i class="fas fa-link"></i> View Project</a>
+                            <a href="#"><i class="fas fa-link"></i> Live Demo</a>
+                            <a href="#"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <section id="resume">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Here's my resume:</h2>
+                <a href="assets/resume.pdf" download target="_blank" class="resume">View Resume</a>
+            </div>
+            <h3>Summary</h3>
+            <p>Creative and detail-driven Web Developer with expertise in frontend and back-end development, specializing in HTML, CSS, JavaScript, PHP, and React. Proven ability to build responsive websites and scalable applications. Passionate about merging technical skills with creative vision through photography and videography, with experience in Adobe Creative Suite.</p>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -214,6 +228,8 @@
                             <textarea id="message" class="form-control" required></textarea>
                         </div>
                         
+                        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                        
                         <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
@@ -234,8 +250,8 @@
             const el = document.getElementById('typewriter-text');
             el.classList.add('typewriter');
         });
-        </script>
-        
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
