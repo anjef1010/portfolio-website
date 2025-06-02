@@ -516,7 +516,7 @@ body {
 }
 
 .card-front {
-  background: url(assets/photos/texture.jpg);
+  background: url(/assets/photos/texture.jpg);
   display: flex;
   flex-direction: column;
   align-items: center;
