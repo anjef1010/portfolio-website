@@ -1,9 +1,108 @@
-@media screen and (max-width: 1200px) {
-    #desktop-nav{
-        display: none;
+/* mediaqueries.css */
 
+/* Medium Screens (Tablets & Small Laptops) */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    #desktop-nav {
+        display: none;
     }
-    #hamburger-nav{
+
+    #hamburger-nav {
         display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Sections */
+    section {
+        padding: 20px 10px;
+    }
+
+    .about-content,
+    .card-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Text */
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Buttons */
+    .btn {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    /* Video Section */
+    .video-projects {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .video-project-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .video-section h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    header, footer {
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+/* Small Screens (Phones) */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .section-container {
+        padding: 10px;
+    }
+
+
+    .profile-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .project-card,
+    .video-project-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .video-project-title {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn,
+    button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .video-thumbnail {
+        width: 100%;
+        height: auto;
     }
 }
