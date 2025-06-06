@@ -1,17 +1,39 @@
 /* Basic Resets & Global Styles */
+:root {
+    /* Define CSS Variables for better maintainability and theming */
+    --primary-color: #007bff;
+    --primary-light: #e9f5ff;
+    --primary-dark: #0056b3;
+    --text-color: #333;
+    --heading-color: #2c3e50;
+    --subtitle-color: #7f8c8d;
+    --background-light: #f5f7fa;
+    --background-white: #ffffff;
+    --border-color: #e5e5e5;
+    --shadow-light: rgba(0, 0, 0, 0.07);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --gap-base: 20px;
+    --card-height-desktop: 480px;
+    --card-height-tablet: 450px;
+    --card-max-height-mobile: 480px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box; /* Universal box-sizing for consistent layout */
+}
+
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
+    background-color: var(--background-light);
+    color: var(--text-color);
     line-height: 1.5;
     display: flex;
-    flex-direction: column; /* Changed to column to stack back button above section */
-    justify-content: flex-start; /* Align content from the top */
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     padding: 15px;
-    box-sizing: border-box;
 }
 
 img {
@@ -26,20 +48,20 @@ img {
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    color: #007bff;
-    background-color: #e9f5ff;
+    color: var(--primary-color);
+    background-color: var(--primary-light);
     padding: 10px 18px;
     border-radius: 25px;
-    margin-bottom: 20px; /* Space between button and section */
+    margin-bottom: var(--gap-base); /* Using CSS variable */
     font-weight: 600;
     font-size: 0.9em;
-    border: 1px solid #007bff;
+    border: 1px solid var(--primary-color);
     transition: all 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.1); /* Specific shadow here */
 }
 
 .back-to-home-btn:hover {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
     box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
     transform: translateY(-1px);
@@ -49,16 +71,16 @@ img {
     font-size: 1.1em;
 }
 
-
 /* --- Section Header --- */
 .video-projects-section {
     padding: 25px 10px;
-    max-width: 1200px; /* Increased max-width to accommodate 3 cards */
+    max-width: 1200px;
+    width: 100%; /* Ensure it takes full width up to max-width */
     margin: 0 auto;
     text-align: center;
-    background-color: #ffffff;
+    background-color: var(--background-white);
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
 .section-header {
@@ -67,14 +89,14 @@ img {
 
 .section-title {
     font-size: 2.2em;
-    color: #2c3e50;
+    color: var(--heading-color);
     margin-bottom: 5px;
     font-weight: 700;
 }
 
 .section-subtitle {
     font-size: 0.9em;
-    color: #7f8c8d;
+    color: var(--subtitle-color);
     font-weight: 300;
 }
 
@@ -107,13 +129,13 @@ img {
     z-index: 10;
     transition: background-color 0.2s ease, transform 0.2s ease;
     user-select: none;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
 
 .nav-button:hover {
     background: rgba(0, 0, 0, 0.7);
     transform: translateY(-50%) scale(1.03);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 #prevBtn {
@@ -127,7 +149,7 @@ img {
 /* --- Cards Container (The visible window for cards) --- */
 .cards-container {
     width: 100%;
-    overflow: hidden; /* Crucial to show only the cards within the visible window */
+    overflow: hidden;
     border-radius: 8px;
 }
 
@@ -136,22 +158,22 @@ img {
     display: flex;
     transition: transform 0.4s ease-in-out;
     padding: 15px 0;
-    align-items: flex-start; /* Align cards to the top, useful if heights vary */
-    gap: 20px; /* Space between cards */
+    align-items: flex-start;
+    gap: var(--gap-base); /* Using CSS variable */
 }
 
 /* --- Individual Video Card (More Compact Design) --- */
 .video-card {
-    /* KEY CHANGE: Adjust width for multiple cards per row */
     flex-shrink: 0;
-    width: calc(33.333% - 13.333px); /* For 3 cards with 20px gap: (100% - 2*20px) / 3 */
-    height: 480px; /* Adjusted height for multi-row display, fine-tune as needed */
-    box-sizing: border-box;
+    /* Updated calc() for cleaner variable usage */
+    width: calc((100% - (var(--gap-base) * 2)) / 3); /* For 3 cards with 20px gap */
+    height: var(--card-height-desktop); /* Using CSS variable */
+    box-sizing: border-box; /* Already universal, but good for emphasis */
     position: relative;
-    background: #ffffff;
-    border: 1px solid #e5e5e5;
+    background: var(--background-white);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    box-shadow: 0 3px 10px var(--shadow-light);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -160,7 +182,7 @@ img {
 
 .video-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Specific shadow here */
 }
 
 .card-inner {
@@ -175,13 +197,13 @@ img {
 .video-thumbnail-wrapper {
     position: relative;
     width: 100%;
-    height: 40%; /* Adjusted thumbnail height */
-    background-color: #f5f5f5;
+    height: 40%;
+    background-color: #f5f5f5; /* Could be a variable if reused */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0; /* Could be a variable if reused */
 }
 
 .video-thumbnail {
@@ -197,10 +219,7 @@ img {
 
 .play-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0; /* Modern shorthand for top, right, bottom, left */
     background: rgba(0, 0, 0, 0.35);
     display: flex;
     align-items: center;
@@ -223,8 +242,8 @@ img {
     align-items: center;
     justify-content: center;
     font-size: 1.8em;
-    color: #3498db;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.15);
+    color: #3498db; /* Specific color, could be a variable if part of a palette */
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
     transition: transform 0.1s ease;
 }
 
@@ -257,7 +276,7 @@ img {
 .video-title {
     font-size: 1.3em;
     margin: 0 0 6px 0;
-    color: #2c3e50;
+    color: var(--heading-color);
     font-weight: 600;
     line-height: 1.2;
     text-align: center;
@@ -265,7 +284,7 @@ img {
 
 .video-description {
     font-size: 0.85em;
-    color: #666;
+    color: #666; /* Could be a variable */
     margin-bottom: 8px;
     line-height: 1.3;
     flex-grow: 1;
@@ -279,14 +298,14 @@ img {
 .tech-used {
     margin-top: 8px;
     margin-bottom: 8px;
-    border-top: 1px dashed #f5f5f5;
+    border-top: 1px dashed #f5f5f5; /* Could be a variable */
     padding-top: 8px;
     text-align: center;
 }
 
 .tech-used h4 {
     font-size: 0.85em;
-    color: #555;
+    color: #555; /* Could be a variable */
     margin-top: 0;
     margin-bottom: 6px;
     text-transform: uppercase;
@@ -306,25 +325,24 @@ img {
     flex-direction: column;
     align-items: center;
     font-size: 0.7em;
-    color: #777;
+    color: #777; /* Could be a variable */
     text-align: center;
     min-width: 55px;
 }
 
 .tech-icon {
     font-size: 1.3em;
-    color: #6c757d;
+    color: #6c757d; /* Could be a variable */
     margin-bottom: 2px;
 }
 
-/* Specific icon adjustments */
+/* Specific icon adjustments - Keep as is, good for specific branding */
 .fab.fa-adobe { color: #d9534f; }
 .fab.fa-youtube { color: #dc3545; }
 .fab.fa-instagram { color: #e83e8c; }
-.fab.fa-facebook { color: #007bff; }
+.fab.fa-facebook { color: var(--primary-color); } /* Using primary color var */
 .fas.fa-video { color: #28a745; }
 .fas.fa-clock { color: #ffc107; }
-
 
 .video-meta {
     display: flex;
@@ -332,7 +350,7 @@ img {
     align-items: center;
     margin-top: 8px;
     padding-top: 8px;
-    border-top: 1px dashed #f5f5f5;
+    border-top: 1px dashed #f5f5f5; /* Could be a variable */
     font-size: 0.8em;
     color: #777;
     flex-wrap: wrap;
@@ -343,17 +361,16 @@ img {
     display: flex;
     align-items: center;
     gap: 3px;
-    background-color: #f8f8f8;
+    background-color: #f8f8f8; /* Could be a variable */
     padding: 3px 6px;
     border-radius: 3px;
-    border: 1px solid #f0f0f0;
+    border: 1px solid #f0f0f0; /* Could be a variable */
 }
 
 .meta-item i {
     color: #6c757d;
     font-size: 0.9em;
 }
-
 
 .watch-button {
     display: flex;
@@ -362,7 +379,7 @@ img {
     gap: 6px;
     font-size: 0.9em;
     color: white;
-    background-color: #007bff;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 18px;
     padding: 8px 18px;
@@ -371,7 +388,7 @@ img {
     user-select: none;
     text-decoration: none;
     font-weight: 600;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
     transition: all 0.15s ease;
     width: 85%;
     max-width: 200px;
@@ -379,51 +396,50 @@ img {
 }
 
 .watch-button:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-dark);
     transform: translateY(-1px);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .watch-button i {
     font-size: 1em;
 }
 
-
 /* --- Pagination Dots --- */
 .pagination-dots {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: var(--gap-base); /* Using CSS variable */
     gap: 8px;
 }
 
 .dot {
     height: 8px;
     width: 8px;
-    background-color: #d1d1d1;
+    background-color: #d1d1d1; /* Could be a variable */
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.2s ease;
-    border: 1px solid #c0c0c0;
+    border: 1px solid #c0c0c0; /* Could be a variable */
 }
 
 .dot.active {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     transform: scale(1.15);
-    border-color: #0056b3;
+    border-color: var(--primary-dark);
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
 }
 
 .dot:hover {
-    background-color: #a0a0a0;
+    background-color: #a0a0a0; /* Could be a variable */
     transform: scale(1.05);
 }
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 1200px) {
     .video-card {
-        width: calc(50% - 10px); /* 2 cards per row for medium screens */
-        height: 450px; /* Adjusted height */
+        width: calc((100% - var(--gap-base)) / 2); /* Updated calc() for 2 cards with 20px gap */
+        height: var(--card-height-tablet); /* Using CSS variable */
     }
     .showcase-container {
         padding: 0 20px;
@@ -456,7 +472,7 @@ img {
     .video-card {
         width: 100%; /* 1 card per row for mobile */
         height: auto; /* Allow height to adjust */
-        max-height: 480px; /* Set a reasonable max-height */
+        max-height: var(--card-max-height-mobile); /* Using CSS variable */
     }
     .card-content {
         padding: 10px;
